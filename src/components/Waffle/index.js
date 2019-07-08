@@ -89,14 +89,15 @@ const MyResponsiveWaffle = ({ wordData, updateSelectedTweets }) => {
           const {
             data: { tweetData },
           } = elem;
-          updateSelectedTweets(tweetData);
+          if (tweetData) {
+            updateSelectedTweets(tweetData);
+          }
         }}
         columns={14}
         margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
-        colors={{
-          scheme: 'blues',
-        }}
+        colors={data => data.color}
         // borderColor={{ from: 'color', modifiers: [['darker', 0.3]] }}
+        borderColor={theme.palette.grey['50']}
         animate={true}
         motionStiffness={90}
         motionDamping={11}
@@ -112,7 +113,7 @@ const MyResponsiveWaffle = ({ wordData, updateSelectedTweets }) => {
             itemHeight: 20,
             itemDirection: 'left-to-right',
             itemOpacity: 1,
-            itemTextColor: '#777',
+            itemTextColor: '#ffffff',
             symbolSize: 20,
             effects: [
               {

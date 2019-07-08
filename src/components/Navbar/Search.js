@@ -92,6 +92,7 @@ const Search = ({
 
   const handleOnSubmit = event => {
     event.preventDefault();
+    
     if (searchText) {
       resetWordCloud();
       emptySelectedTweets();

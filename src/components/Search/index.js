@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/styles';
 import { Grid } from '@material-ui/core/';
 
 import Wordcloud from './Wordcloud';
-import LineChart from '../LineChart';
 import LineChartTime from '../LineChartTime';
 import BarChart from '../BarChart';
 import Waffle from '../Waffle';
@@ -28,7 +27,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('lg')]: {
       height: '90vh',
     },
-    // height: '90vh',
     transform: 'translateY(3.5rem)',
   },
   input: {
@@ -48,7 +46,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('lg')]: {
       height: '75vh',
     },
-    // height: '85vh',
   },
 }));
 
@@ -131,14 +128,10 @@ const Search = props => {
   );
 };
 
-const mapStateToProps = (state, { user }) => {
-  return {
-    ...state,
-    user,
-  };
+const mapStateToProps = state => {
+  return state;
 };
 
 export default connect(
-  mapStateToProps,
-  { endLoading, startLoading, searchRequest }
+  mapStateToProps, { endLoading, startLoading, searchRequest }
 )(Search);
