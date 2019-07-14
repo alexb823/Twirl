@@ -6,7 +6,6 @@ import { loginSession } from '../reducers/userReducer';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Search from './Search';
 import Navbar from './Navbar';
-import LineChart from './LineChart';
 
 import { ThemeProvider } from '@material-ui/styles';
 import theme from './theme';
@@ -27,7 +26,6 @@ const App = ({ loginSession }) => {
           <Route exact path="/" component={Landing} />
           <Route exact path="/search/" component={Search} />
           <Route path="/search/:searchType/:searchText" component={Search} />
-          <Route path="/testing" component={LineChart} />
         </Router>
       </ThemeProvider>
     </SnackbarProvider>
